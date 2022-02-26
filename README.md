@@ -1,4 +1,6 @@
 # HW-Lego
-Lego
-This is a line from RStudio
-Testing push
+DAS422 HW-Legos
+
+Practice with Git
+
+Data dsbox package
