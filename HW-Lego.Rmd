@@ -1,0 +1,38 @@
+---
+title: "HW-Lego by Yiyong Huang"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+library(tidyverse)
+library(dsbox)
+```
+
+**Question 1** What are the three most common first names of purchasers?
+
+```{r}
+lego_sales %>% group_by(first_name) %>% count(first_name) %>% 
+  arrange(desc(n)) %>% head(5)
+```
+
+Answer: The three most common first names of purhasers are Jackson, Jacob and Joseph.
+
+**Question 2** What are the three most common themes of Lego sets purchased?
+
+```{r}
+lego_sales %>% group_by(theme) %>% count(theme) %>% arrange(desc(n)) %>% head(5)
+```
+
+Answer: The three most common themes of Lego sets purchased are "Star Wars", "Nexo Knights" and "Gear".
+
+**Question 3** Among the most common theme of Lego sets purchased, what is the most common subtheme?
+
+```{r}
+lego_sales %>% filter(theme=="Star Wars") %>% 
+  group_by(subtheme) %>% count(subtheme) %>%
+  arrange(desc(n)) %>% head(3)
+```
+
+Answer: Among the most common theme of Lego sets purchased, the most common subtheme is "The Force Awakens".
